@@ -1,10 +1,5 @@
 package org.robolectric.android.internal;
 
-import static android.location.LocationManager.GPS_PROVIDER;
-import static android.os.Build.VERSION_CODES.P;
-import static org.robolectric.shadow.api.Shadow.newInstanceOf;
-import static org.robolectric.util.reflector.Reflector.reflector;
-
 import android.annotation.SuppressLint;
 import android.app.ActivityThread;
 import android.app.Application;
@@ -28,16 +23,9 @@ import android.os.Looper;
 import android.provider.FontsContract;
 import android.provider.Settings.Secure;
 import android.util.DisplayMetrics;
+
 import com.google.common.annotations.VisibleForTesting;
-import java.lang.reflect.Method;
-import java.nio.file.FileSystem;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.security.Security;
-import java.util.Locale;
-import javax.annotation.Nonnull;
-import javax.inject.Named;
-import org.bouncycastle.jce.provider.BouncyCastleProvider;
+
 import org.robolectric.ApkLoader;
 import org.robolectric.RuntimeEnvironment;
 import org.robolectric.android.Bootstrap;
@@ -77,6 +65,22 @@ import org.robolectric.util.PerfStatsCollector;
 import org.robolectric.util.ReflectionHelpers;
 import org.robolectric.util.Scheduler;
 import org.robolectric.util.TempDirectory;
+import org.spongycastle.jce.provider.BouncyCastleProvider;
+
+import java.lang.reflect.Method;
+import java.nio.file.FileSystem;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.security.Security;
+import java.util.Locale;
+
+import javax.annotation.Nonnull;
+import javax.inject.Named;
+
+import static android.location.LocationManager.GPS_PROVIDER;
+import static android.os.Build.VERSION_CODES.P;
+import static org.robolectric.shadow.api.Shadow.newInstanceOf;
+import static org.robolectric.util.reflector.Reflector.reflector;
 
 @SuppressLint("NewApi")
 public class AndroidEnvironment implements Environment {

@@ -1,24 +1,13 @@
 package org.robolectric.android.internal;
 
-import static android.os.Build.VERSION_CODES.O;
-import static com.google.common.truth.Truth.assertThat;
-import static org.junit.Assert.fail;
-import static org.junit.Assume.assumeTrue;
-
 import android.app.Application;
 import android.content.pm.ApplicationInfo;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.os.Build;
+
 import androidx.test.core.app.ApplicationProvider;
-import java.io.File;
-import java.security.cert.CertificateException;
-import java.security.cert.CertificateFactory;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Locale;
-import java.util.concurrent.atomic.AtomicBoolean;
-import org.bouncycastle.jce.provider.BouncyCastleProvider;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.robolectric.BootstrapDeferringRobolectricTestRunner;
@@ -36,6 +25,20 @@ import org.robolectric.res.ResourceTable;
 import org.robolectric.shadow.api.Shadow;
 import org.robolectric.shadows.ShadowApplication;
 import org.robolectric.shadows.ShadowLooper;
+import org.spongycastle.jce.provider.BouncyCastleProvider;
+
+import java.io.File;
+import java.security.cert.CertificateException;
+import java.security.cert.CertificateFactory;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Locale;
+import java.util.concurrent.atomic.AtomicBoolean;
+
+import static android.os.Build.VERSION_CODES.O;
+import static com.google.common.truth.Truth.assertThat;
+import static org.junit.Assert.fail;
+import static org.junit.Assume.assumeTrue;
 
 @RunWith(BootstrapDeferringRobolectricTestRunner.class)
 public class AndroidEnvironmentTest {

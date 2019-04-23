@@ -35,7 +35,8 @@ dependencies {
     //   can find its META-INF/services/org.robolectric.shadows.ShadowAdapter.
     api project(":shadows:framework")
 
-    api "org.bouncycastle:bcprov-jdk15on:1.52"
+    api 'com.madgag.spongycastle:core:1.54.0.0'
+    api 'com.madgag.spongycastle:prov:1.54.0.0'
     compileOnly "com.google.code.findbugs:jsr305:3.0.2"
 
     compileOnly AndroidSdk.MAX_SDK.coordinates
